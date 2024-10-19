@@ -107,4 +107,6 @@
 }
 .markdown > * {
   all: revert;
+  padding: 0;
+  margin: 0;
 }

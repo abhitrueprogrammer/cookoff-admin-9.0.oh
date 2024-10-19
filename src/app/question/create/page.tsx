@@ -145,7 +145,8 @@ const Create = () => {
               onChange={(e) => setDescription(e.target.value)}
               rows={10}
             ></Textarea>
-            <Markdown className="p-2 markdown w-full border ">{description}</Markdown>
+            <Markdown className="p-2
+             markdown w-full border ">{description}</Markdown>
           </div>
         </div>
 
