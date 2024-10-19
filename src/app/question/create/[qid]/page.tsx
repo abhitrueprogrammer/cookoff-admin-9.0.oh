@@ -26,7 +26,7 @@ const CreateButton = () => {
 
   const router = useRouter();
   const [question, setQuestion] = useState<QuestionResponse>();
-  const [description, setDescription] = useState<string>("");
+  const [description, setDescription] = useState<string>("teri-mummy");
   const queryClient = useQueryClient();
   useEffect(() => {
     void toast.promise(
@@ -102,7 +102,7 @@ const CreateButton = () => {
             {/* <Editor /> */}
             <Textarea
               id="description"
-              placeholder="teri-mummy"
+              defaultValue={description}
               className="w-full"
               {...register("description")}
               onChange={(e) => setDescription(e.target.value)}

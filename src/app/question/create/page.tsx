@@ -25,7 +25,7 @@ const Create = () => {
   const [sampleOutputs, setSampleOutputs] = useState<string[]>([""]);
   const [explanations, setExplanations] = useState<string[]>([""]);
   const [inputFormats, setInputFormats] = useState<string[]>([""]);
-  const [description, setDescription] = useState<string>("");
+  const [description, setDescription] = useState<string>("teri-mummy");
   const createQuestion = useMutation({
     mutationFn: async (data: CreateQuestionParams) => {
       data.input_format = inputFormats;
@@ -139,7 +139,8 @@ const Create = () => {
             {/* <Editor /> */}
             <Textarea
               id="description"
-              placeholder="teri-mummy"
+              defaultValue={description}
+          
               className="w-full"
               {...register("description")}
               onChange={(e) => setDescription(e.target.value)}
