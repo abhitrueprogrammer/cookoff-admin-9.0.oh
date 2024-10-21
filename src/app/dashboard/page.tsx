@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <div className="h-screen">
       <div>
-        <div className="border-gray-300-4 relative m-10 w-full rounded-md border shadow-md">
+        {/* <div className="border-gray-300-4 relative m-10 w-full rounded-md border shadow-md">
           <span className="absolute -top-3 left-4 bg-black px-2 text-lg font-semibold text-white">
             Navigate
           </span>
@@ -30,7 +30,7 @@ function Dashboard() {
               USERS
             </Button>
           </div>
-        </div>
+        </div> */}
         <div className="border-gray-300-4 relative m-10 w-full rounded-md border shadow-md p-10">
           <span className="absolute -top-3 left-4 bg-black px-2 text-lg font-semibold text-white">
             Round Select
