@@ -107,8 +107,8 @@ const Create = () => {
 
   return (
     <div className="m-10 space-y-10 text-white">
-      <div className="flex items-center">
-        <h1 className="flex-grow text-center text-2xl font-bold text-accent">
+      <div className="flex  items-center">
+        <h1 className="s-sling flex-grow text-center text-2xl font-bold text-accent">
           Add Questions
         </h1>
       </div>
