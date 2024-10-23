@@ -1,6 +1,6 @@
 import { LeaderBoardUser } from "@/api/adminDashboard";
-import { createColumnHelper } from "@tanstack/react-table";
+import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 
 const columnHelper = createColumnHelper<LeaderBoardUser>();
 
-export const LeaderBoardDataColumn = [
+export const LeaderBoardDataColumn = [] as ColumnDef<LeaderBoardUser>[];
