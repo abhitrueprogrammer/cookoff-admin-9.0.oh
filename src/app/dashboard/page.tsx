@@ -10,9 +10,8 @@ function Dashboard() {
     queryFn: GetLeaderBoard,
   });
   return (
-    <div className="h-screen">
-      <div>
-        <div className="border-gray-300-4 relative m-10 w-full rounded-md border shadow-md p-10">
+    <div className="min-h-screen text-white">
+        <div className="border-gray-300-4 relative  w-full rounded-md border shadow-md p-10">
           <span className="absolute -top-3 left-4 bg-black px-2 text-lg font-semibold text-white">
             Round Select
           </span>
@@ -20,8 +19,8 @@ function Dashboard() {
           <Round />
         </div>
 
-      </div>
-      <div>
+      <div className="m-3 text-lg font-semibold">Leader Board</div>
+      <div className="w-full">
         <ClientTable
           data={data}
           error={error}
