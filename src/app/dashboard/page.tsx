@@ -1,9 +1,18 @@
 "use client";
 import { GetLeaderBoard, LeaderBoardUser } from "@/api/adminDashboard";
 import Round from "@/components/round";
-import ClientTable from "@/components/Table/ClientTable";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { useQuery } from "@tanstack/react-query";
-import { LeaderBoardDataColumn } from "./LeaderBoardDataColumn";
+import { table } from "console";
+
 function Dashboard() {
   const { data, error, isLoading } = useQuery<LeaderBoardUser[], Error>({
     queryKey: ["leaderboard"],
@@ -11,25 +20,71 @@ function Dashboard() {
   });
   return (
     <div className="min-h-screen text-white">
-        <div className="border-gray-300-4 relative  w-full rounded-md border shadow-md p-10">
-          <span className="absolute -top-3 left-4 bg-black px-2 text-lg font-semibold text-white">
-            Round Select
-          </span>
+      <div className="border-gray-300-4 relative w-full rounded-md border p-10 shadow-md">
+        <span className="absolute -top-3 left-4 bg-black px-2 text-lg font-semibold text-white">
+          Round Select
+        </span>
 
-          <Round />
+        <Round />
+      </div>
+      <div className="s-sling m-3 mt-10 text-center text-xl font-semibold">
+        Leaderboard
+      </div>
+      {data && data.length > 3 ? (
+        <div className="m-5 flex flex-col items-center gap-5">
+          <p
+            className="w-fit cursor-pointer rounded-sm border bg-yellow-700 p-2 text-lg hover:bg-yellow-600"
+            onClick={() => navigator.clipboard.writeText(data[0]!.ID)}
+          >
+            #1 {data[0]?.Name}
+          </p>
+          <div className="flex justify-around gap-5">
+            <p
+              className="w-fit cursor-pointer rounded-sm border bg-green-700 p-2 text-lg hover:bg-green-600"
+              onClick={() => navigator.clipboard.writeText(data[0]!.ID)}
+            >
+              #2 {data[1]?.Name}
+            </p>
+            <p
+              className="w-fit cursor-pointer rounded-sm border bg-red-700 p-2 text-lg hover:bg-red-600"
+              onClick={() => navigator.clipboard.writeText(data[0]!.ID)}
+            >
+              #3 {data[2]?.Name}
+            </p>
+          </div>
         </div>
-
-      <div className="m-3 text-lg font-semibold">Leader Board</div>
-      <div className="w-full">
-        <ClientTable
-          data={data}
-          error={error}
-          isLoading={isLoading}
-          columns={LeaderBoardDataColumn}
-        />
+      ) : (
+        <p>No data available</p>
+      )}
+      <div className="flex justify-center">
+        <table className="border-collapse">
+          {data?.slice(3, 6).map((user, index) => (
+            <tr
+              key={user.ID}
+              className="cursor-pointer rounded-md text-white"
+              onClick={() => navigator.clipboard.writeText(user.ID)}
+            >
+              <td className="m-10 bg-black px-4 py-2 text-left hover:bg-slate-700">
+                {index + 4}. {user.Name}
+              </td>
+            </tr>
+          ))}
+        </table>{" "}
+        <table className="border-collapse">
+          {data?.slice(6, 10).map((user, index) => (
+            <tr
+              key={user.ID}
+              className="cursor-pointer"
+              onClick={() => navigator.clipboard.writeText(user.ID)}
+            >
+              <td className="m-10 bg-black px-4 py-2 text-left hover:bg-slate-700">
+                {index + 7}. {user.Name}
+              </td>
+            </tr>
+          ))}
+        </table>
       </div>
     </div>
-    
   );
 }
 

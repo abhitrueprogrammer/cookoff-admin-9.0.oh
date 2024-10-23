@@ -35,7 +35,7 @@ const generateSampleLeaderboard = (): LeaderBoardUser[] => {
     {
       ID: "01922fc8-5e18-7c90-89ee-5f2f3e1012c8",
       Name: "abc",
-      Score: 72,
+      Score: 100000,
     },
     {
       ID: "01922f0d-010d-7d08-ad02-2383b0dbccff",
