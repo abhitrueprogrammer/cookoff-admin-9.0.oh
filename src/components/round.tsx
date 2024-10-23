@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { ApiError } from "next/dist/server/api-utils";
-import { RoundEnable } from "@/api/round";
+import { RoundEnable } from "@/api/adminDashboard";
 
 const Round = () => {
   const [round, setRound] = useState<number>(1);
