@@ -4,7 +4,7 @@ import Round from "@/components/round";
 import {
   Table,
   TableBody,
-  TableCaption,
+  // TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -30,7 +30,7 @@ function Dashboard() {
       <div className="s-sling m-3 mt-10 text-center text-xl font-semibold">
         Leaderboard
       </div>
-      {data && data.length > 3 ? (
+      {data && data.length > 0 ? (
         <div className="m-5 flex flex-col items-center gap-5">
           <p
             className="w-fit cursor-pointer rounded-sm border bg-yellow-700 p-2 text-lg hover:bg-yellow-600"
@@ -38,20 +38,26 @@ function Dashboard() {
           >
             #1 {data[0]?.Name}
           </p>
-          <div className="flex justify-around gap-5">
-            <p
-              className="w-fit cursor-pointer rounded-sm border bg-green-700 p-2 text-lg hover:bg-green-600"
-              onClick={() => navigator.clipboard.writeText(data[0]!.ID)}
-            >
-              #2 {data[1]?.Name}
-            </p>
-            <p
-              className="w-fit cursor-pointer rounded-sm border bg-red-700 p-2 text-lg hover:bg-red-600"
-              onClick={() => navigator.clipboard.writeText(data[0]!.ID)}
-            >
-              #3 {data[2]?.Name}
-            </p>
-          </div>
+
+          {data.length > 1 && (
+            <div className="flex justify-around gap-5">
+              <p
+                className="w-fit cursor-pointer rounded-sm border bg-green-700 p-2 text-lg hover:bg-green-600"
+                onClick={() => navigator.clipboard.writeText(data[1]!.ID)}
+              >
+                #2 {data[1]?.Name}
+              </p>
+
+              {data.length > 2 && (
+                <p
+                  className="w-fit cursor-pointer rounded-sm border bg-red-700 p-2 text-lg hover:bg-red-600"
+                  onClick={() => navigator.clipboard.writeText(data[2]!.ID)}
+                >
+                  #3 {data[2]?.Name}
+                </p>
+              )}
+            </div>
+          )}
         </div>
       ) : (
         <p>No data available</p>

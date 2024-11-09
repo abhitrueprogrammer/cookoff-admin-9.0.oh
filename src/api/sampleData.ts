@@ -26,7 +26,7 @@ const generateSampleData = (): QuestionResponse[] => {
   return sampleQuestions;
 };
 const generateSampleLeaderboard = (): LeaderBoardUser[] => {
-  let students = [
+  const students = [
     {
       ID: "01922f1a-0ff4-71b6-aee4-b6b69f41c4ce",
       Name: "Vedant Matanhelia",

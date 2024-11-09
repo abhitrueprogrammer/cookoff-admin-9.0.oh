@@ -150,29 +150,29 @@ const TableFoot = React.forwardRef<
 
 TableFoot.displayName = "TableFoot";
 
-const TableCaption = React.forwardRef<
-  HTMLTableCaptionElement,
-  React.HTMLAttributes<HTMLTableCaptionElement>
->(({ className, ...props }, forwardedRef) => (
-  <caption
-    ref={forwardedRef}
-    className={cn(
-      // base
-      "mt-3 px-3 text-center text-sm",
-      // text color
-      "text-white",
-      className,
-    )}
-    {...props}
-  />
-));
+// const TableCaption = React.forwardRef<
+//   HTMLTableCaptionElement,
+//   React.HTMLAttributes<HTMLTableCaptionElement>
+// >(({ className, ...props }, forwardedRef) => (
+//   <caption
+//     ref={forwardedRef}
+//     className={cn(
+//       // base
+//       "mt-3 px-3 text-center text-sm",
+//       // text color
+//       "text-white",
+//       className,
+//     )}
+//     {...props}
+//   />
+// ));
 
-TableCaption.displayName = "TableCaption";
+// TableCaption.displayName = "TableCaption";
 
 export {
   Table,
   TableBody,
-  TableCaption,
+  // TableCaption,
   TableCell,
   TableFoot,
   TableHead,
