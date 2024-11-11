@@ -33,10 +33,13 @@ const Round = () => {
           onChange={(e) => {
             setRound(Number(e.target.value));
           }}
-          defaultValue="1"
+          // defaultValue="1"
           id="round"
           className="rounded-md border bg-gray-200 p-2 text-black"
         >
+          <option value="" disabled>
+            Select round
+          </option>
           <option value={1}>Round 1</option>
           <option value={2}>Round 2</option>
           <option value={3}>Round 3</option>

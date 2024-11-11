@@ -41,7 +41,7 @@ export const TestcaseDataColumn = [
       <div className="flex justify-center gap-2">
         <Dialog>
           <DialogTrigger>
-            <Button variant="outline">Input</Button>
+            <Button className="bg-black" variant="outline">Input</Button>
           </DialogTrigger>
           <div className="max-w-10 break-all">
             <DialogContent className="max-h-[85vh] overflow-y-auto break-all">

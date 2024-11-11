@@ -45,7 +45,7 @@ const BanBtn = ({ row }: { row: Row<User> }) => {
         </div>
       ) : (
         <div>
-          <Button
+          <Button disabled= {row.original.Role === "admin"}
             onClick={() => {
               onRoastSubmit(row.original.ID);
             }}

@@ -1,6 +1,6 @@
 "use client";
 
-import { getTestcaseByQuestion, type TestCaseResponse } from "@/api/testcases";
+import { getTestcaseByQuestion, TestCaseResponse } from "@/api/testcases";
 import ClientTable from "@/components/Table/ClientTable";
 import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/ui/CopyButton";
@@ -24,21 +24,21 @@ const Page = ({ id }: { id: string }) => {
   });
   console.log(data);
   return (
-    <div>
+    <div className="">
       <Dialog>
         <DialogTrigger asChild>
           <Button className="bg-slate-900 text-white hover:bg-slate-700">
             Test Case Info
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-fit">
+        <DialogContent className="text-white bg-black max-w-fit">
           <DialogHeader>
             <DialogTitle>
               QID: {id} <CopyButton content={id} />{" "}
             </DialogTitle>
             <DialogDescription>A table all about test cases</DialogDescription>
           </DialogHeader>
-          <div className="bg-white">
+          <div className="bg-black">
             <ModalCreateTestcase id={id}> Create</ModalCreateTestcase>
             <div>
               <ClientTable
@@ -55,5 +55,14 @@ const Page = ({ id }: { id: string }) => {
   );
 };
 
+// const ModalDetails = ({
+//   id,
+//   children,
+// }: {
+//   id: string;
+//   children: React.ReactNode;
+// }) => {
+//   // const [testcase]
+// };
 
 export default Page;
