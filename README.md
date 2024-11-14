@@ -41,7 +41,7 @@
 - All our tables have sorting with pagination and caching.
 <p align="center">
 
-#### Login
+#### Login Page
 
 <img width="1440" alt="image" src="/showcase_ss/login_page.png">
 
