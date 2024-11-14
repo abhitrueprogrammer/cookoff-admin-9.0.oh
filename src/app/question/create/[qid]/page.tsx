@@ -65,32 +65,38 @@ const CreateButton = () => {
     }
   };
 
+  const { setValue, register, handleSubmit, reset } =
+    useForm<UpdateQuestionParams>();
+
   useEffect(() => {
-    GetQuestionById(params.qid).then(async (q) => {
-      setQuestion(q);
-      setDescription(q.Description);
-      setExplanations(q.Explanation);
-      setInputFormats(q.InputFormat);
-      setSampleOutputs(q.SampleTestOutput);
-      setSampleInputs(q.SampleTestInput)
-      if(q.Constraints)
-      {
+    const fetchQuestion = async () => {
+      try {
+        const q = await GetQuestionById(params.qid);
 
-        setValue("constraints.0", q.Constraints.join("\n"));
-      }
-      if(q.OutputFormat)
-      {
-        setValue("output_format.0", q.OutputFormat.join("\n"));
+        setQuestion(q);
+        setDescription(q.Description);
+        setExplanations(q.Explanation);
+        setInputFormats(q.InputFormat);
+        setSampleOutputs(q.SampleTestOutput);
+        setSampleInputs(q.SampleTestInput);
 
-      }
-      if(q.Round)
-        {
-          setValue("round", q.Round);
-  
+        if (q.Constraints) {
+          setValue("constraints.0", q.Constraints.join("\n"));
         }
-    });
-  }, []);
-  const { setValue, register, handleSubmit, reset } = useForm<UpdateQuestionParams>();
+        if (q.OutputFormat) {
+          setValue("output_format.0", q.OutputFormat.join("\n"));
+        }
+        if (q.Round) {
+          setValue("round", q.Round);
+        }
+      } catch (error) {
+        console.error("Error fetching question:", error);
+      }
+    };
+
+    void fetchQuestion();
+  }, [params.qid, setValue]);
+
   const createQuestion = useMutation({
     mutationFn: (data: UpdateQuestionParams) => {
       data.id = params.qid;

@@ -11,10 +11,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { ApiError } from "next/dist/server/api-utils";
+import { type ApiError } from "next/dist/server/api-utils";
 import { RoundEnable } from "@/api/adminDashboard";
 
 const Round = () => {

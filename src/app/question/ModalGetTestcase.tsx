@@ -1,6 +1,6 @@
 "use client";
 
-import { getTestcaseByQuestion, TestCaseResponse } from "@/api/testcases";
+import { getTestcaseByQuestion, type TestCaseResponse } from "@/api/testcases";
 import ClientTable from "@/components/Table/ClientTable";
 import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/ui/CopyButton";
@@ -31,17 +31,17 @@ const Page = ({ id }: { id: string }) => {
             Test Case Info
           </Button>
         </DialogTrigger>
-        <DialogContent className="text-white bg-black max-w-fit max-h-[83.33vh] overflow-y-auto">
+        <DialogContent className="max-h-[83.33vh] max-w-fit overflow-y-auto bg-black text-white">
           <DialogHeader>
             <DialogTitle>
               QID: {id} <CopyButton content={id} />{" "}
             </DialogTitle>
             <DialogDescription>A table all about test cases</DialogDescription>
           </DialogHeader>
-          <div className="bg-black ">
+          <div className="bg-black">
             <ModalCreateTestcase id={id}> Create</ModalCreateTestcase>
-            <div className="md:max-w-7xl max-w-xl ">
-            <ClientTable
+            <div className="max-w-xl md:max-w-7xl">
+              <ClientTable
                 data={data}
                 error={error}
                 isLoading={isLoading}

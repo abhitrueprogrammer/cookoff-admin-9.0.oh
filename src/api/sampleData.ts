@@ -1,4 +1,4 @@
-import { LeaderBoardUser } from "./adminDashboard";
+import { type LeaderBoardUser } from "./adminDashboard";
 import { type QuestionResponse } from "./questions";
 
 const generateSampleData = (): QuestionResponse[] => {
