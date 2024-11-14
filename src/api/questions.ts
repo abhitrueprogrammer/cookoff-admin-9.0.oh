@@ -53,7 +53,7 @@ interface DeleteQuestionResponse {
 }
 // GET REQUEST
 export async function GetAllQuestions() {
-  try {
+  try { 
     const response = await api.get<QuestionResponse[]>("/questions");
     return response.data;
     // return generateSampleData()

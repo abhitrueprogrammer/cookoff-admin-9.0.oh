@@ -33,7 +33,7 @@ const Round = () => {
           onChange={(e) => {
             setRound(Number(e.target.value));
           }}
-          // defaultValue="1"
+          defaultValue=""
           id="round"
           className="rounded-md border bg-gray-200 p-2 text-black"
         >

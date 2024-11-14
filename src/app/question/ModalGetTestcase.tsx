@@ -31,17 +31,17 @@ const Page = ({ id }: { id: string }) => {
             Test Case Info
           </Button>
         </DialogTrigger>
-        <DialogContent className="text-white bg-black max-w-fit">
+        <DialogContent className="text-white bg-black max-w-fit max-h-[83.33vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
               QID: {id} <CopyButton content={id} />{" "}
             </DialogTitle>
             <DialogDescription>A table all about test cases</DialogDescription>
           </DialogHeader>
-          <div className="bg-black">
+          <div className="bg-black ">
             <ModalCreateTestcase id={id}> Create</ModalCreateTestcase>
-            <div>
-              <ClientTable
+            <div className="md:max-w-7xl max-w-xl ">
+            <ClientTable
                 data={data}
                 error={error}
                 isLoading={isLoading}
