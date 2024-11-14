@@ -65,6 +65,7 @@
 <img width="1440" alt="image" src="/showcase_ss/users_page.png">
 
 </p>
+
 ## 🏁 Get Started
 
 To get started, fork your own copy and clone the master branch. To clone a branch you can run the following:
