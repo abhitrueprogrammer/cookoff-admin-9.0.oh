@@ -48,6 +48,7 @@ export default function Login() {
       <div className="mt-8 flex w-full flex-row">
         <div className="flex w-1/2 flex-col">
           <div className="flex flex-col">
+            <div className="flex flex-col items-end">
             <Image
               className="ml-20 mr-10 pl-14"
               src={cookoff as HTMLImageElement}
@@ -55,6 +56,8 @@ export default function Login() {
               width={580}
               height={400}
             />
+            <p className="s-sling text-2xl " style={{margin: "-50px 50px;"}}>INTERNAL</p>
+            </div>
             <div className="relative"></div>
           </div>
         </div>
