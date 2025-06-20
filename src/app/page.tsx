@@ -45,18 +45,20 @@ export default function Login() {
       <h1 className="s-sling pt-5 text-3xl font-bold text-accent">
         CODECHEF PRESENTS
       </h1>
-      <div className="mt-8 flex w-full flex-row">
+      <div className="mt-8 flex w-full flex-row items-center">
         <div className="flex w-1/2 flex-col">
           <div className="flex flex-col">
             <div className="flex flex-col items-end">
-            <Image
-              className="ml-20 mr-10 pl-14"
-              src={cookoff as HTMLImageElement}
-              alt="cookoff text"
-              width={580}
-              height={400}
-            />
-            <p className="s-sling text-2xl " style={{margin: "-50px 50px;"}}>INTERNAL</p>
+              <Image
+                className="ml-20 mr-10 pl-14"
+                src={cookoff as HTMLImageElement}
+                alt="cookoff text"
+                width={580}
+                height={400}
+              />
+              <p className="s-sling text-2xl" style={{ margin: "-50px 50px;" }}>
+                INTERNAL
+              </p>
             </div>
             <div className="relative"></div>
           </div>
