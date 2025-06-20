@@ -1,9 +1,8 @@
 import { handleAPIError } from "@/lib/error";
 import { type ApiResponse } from "@/schemas/api";
 import { type loginFormSchema } from "@/schemas/forms/login";
-import { type z } from "zod";
 import api from ".";
-import { signupFormSchema } from "@/app/signup/page";
+import { z } from "zod";
 
 export async function login(body: z.infer<typeof loginFormSchema>) {
   try {
@@ -14,6 +13,25 @@ export async function login(body: z.infer<typeof loginFormSchema>) {
   }
 }
 
+export const signupFormSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z
+    .string()
+    .email({
+      message: "Please enter a valid email address.",
+    })
+    .refine((email) => email.endsWith("@vitstudent.ac.in"), {
+      message: "Email must be from vitstudent.ac.in domain.",
+    }),
+  regNumber: z.string().min(1, {
+    message: "Registration number is required.",
+  }),
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
 
 export type SignupResponse = {
   message: string;

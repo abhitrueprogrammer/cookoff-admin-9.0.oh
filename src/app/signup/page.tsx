@@ -20,27 +20,8 @@ import {
 import { Input } from "@/components/ui/input";
 import api from "@/api";
 import { handleAPIError } from "@/lib/error";
-import { signup } from "@/api/login";
+import { signup, signupFormSchema } from "@/api/login";
 
-export const signupFormSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z
-    .string()
-    .email({
-      message: "Please enter a valid email address.",
-    })
-    .refine((email) => email.endsWith("@vitstudent.ac.in"), {
-      message: "Email must be from vitstudent.ac.in domain.",
-    }),
-  regNumber: z.string().min(1, {
-    message: "Registration number is required.",
-  }),
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
 
 export default function ProfileForm() {
   const [password, setPassword] = useState<string | null>(null);
