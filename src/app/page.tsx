@@ -114,13 +114,23 @@ export default function Login() {
                     {errors.password.message}
                   </p>
                 )}
-                <button
-                  type="submit"
-                  className="s-sling mt-4 w-[100px] rounded-md bg-accent p-3 text-white"
-                  disabled={isLoading}
-                >
-                  Login
-                </button>
+                <div className="flex items-center justify-between">
+                  <button
+                    type="submit"
+                    className="s-sling mt-4 w-[100px] rounded-md bg-accent p-3 text-white"
+                    disabled={isLoading}
+                  >
+                    Login
+                  </button>
+                  <button
+                    type="submit"
+                    className="s-sling mt-4 w-[100px] rounded-md bg-accent p-3 text-white"
+                    disabled={isLoading}
+                    onClick={() => router.push("/signup")}
+                  >
+                    Signup
+                  </button>
+                </div>
               </form>
             </div>
           </div>

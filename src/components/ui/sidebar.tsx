@@ -13,7 +13,7 @@ export default function Sidebar() {
 
   return (
     <nav
-      className={`${pathname === "/" ? "hidden" : "flex"} fixed z-10 float-left flex h-screen w-44 flex-col border-r border-black bg-[#101010] transition-all duration-300`}
+      className={`${pathname === "/" || pathname === "/signup" ? "hidden" : "flex"} fixed z-10 float-left flex h-screen w-44 flex-col border-r border-black bg-[#101010] transition-all duration-300`}
     >
       (
       <>
